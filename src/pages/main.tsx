@@ -1,6 +1,6 @@
 import React from 'react';
-import InputField from '../components/InputField';
-import PageLayout from '../components/PageLayout';
+import InputField from '../components/InputField/InputField';
+import PageLayout from '../components/PageLayout/PageLayout';
 import { useRouter } from 'next/router';
 
 const MainPage: React.FC = () => {

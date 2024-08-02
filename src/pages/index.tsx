@@ -1,6 +1,6 @@
 import React from 'react';
-import Button from '../components/Button';
-import PageLayout from '../components/PageLayout';
+import Button from '../components/Button/Button';
+import PageLayout from '../components/PageLayout/PageLayout';
 import { useRouter } from 'next/router';
 
 const IndexPage: React.FC = () => {

@@ -1,0 +1,20 @@
+.button {
+    /* background-color: #593a70; */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    margin: 10px 0; /* Add some space above and below the button */
+    width: 100%; /* Ensure buttons are full width */
+    max-width: 400px; /* Limit max width */
+  }
+  
+  .button:hover {
+    background-color: #1565c0; /* Darker blue on hover */
+  }
+
+
+  

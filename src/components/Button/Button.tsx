@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './Button.module.css'
 
 interface ButtonProps {
   onClick: () => void;
@@ -6,7 +7,7 @@ interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = ({ onClick, label }) => (
-  <button onClick={onClick}>
+  <button className = {styles.button} onClick={onClick}>
     {label}
   </button>
 );

@@ -1,0 +1,11 @@
+.buttonContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    max-width: 100%;
+    align-items: center;
+  }
+
+.button{
+    background-color:rgb(11, 104, 104) ;
+}

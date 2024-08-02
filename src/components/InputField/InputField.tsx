@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styles from './InputField.module.css';
 
 interface InputFieldProps {
   onSubmit: (value: string) => void;
@@ -16,9 +17,9 @@ const InputField: React.FC<InputFieldProps> = ({ onSubmit }) => {
   };
 
   return (
-    <div>
-      <input type="text" value={value} onChange={handleChange} />
-      <button onClick={handleSubmit}>Send</button>
+    <div className={styles.inputContainer}>
+      <input type="text" value={value} onChange={handleChange} className={styles.input} />
+      <button onClick={handleSubmit} className={styles.button}>Send</button>
     </div>
   );
 };
