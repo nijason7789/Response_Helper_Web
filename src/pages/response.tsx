@@ -58,7 +58,7 @@ const ResponsePage: React.FC = () => {
       console.log(response);
 
       // Update sessionStorage with the new data
-      sessionStorage.setItem('original', response.translation_0);
+      sessionStorage.setItem('translation_0', response.translation_0);
       sessionStorage.setItem('suggestion_1', response.suggestion_1);
       sessionStorage.setItem('translation_1', response.translation_1);
       sessionStorage.setItem('suggestion_2', response.suggestion_2);
@@ -67,7 +67,7 @@ const ResponsePage: React.FC = () => {
       sessionStorage.setItem('translation_3', response.translation_3);
 
       // Update state to reflect the new data
-      setOriginal(response.translation_0);
+      setTranslated(response.translation_0);
       setSuggestion_1(response.suggestion_1);
       setTranslation_1(response.translation_1);
       setSuggestion_2(response.suggestion_2);
