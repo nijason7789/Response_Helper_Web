@@ -4,6 +4,7 @@ import PageLayout from '../components/PageLayout/PageLayout';
 import ResponseCard from '../components/ResponseCard/ResponseCard';
 import ActionButtons from '@/components/ActionButtons/ActionButtons';
 import SuggestionButtons from '@/components/SuggestionButtons/SuggestionButtons'
+import { sendMoreRequest } from './service/apiService';
 
 const ResponsePage: React.FC = () => {
   const router = useRouter();
@@ -46,8 +47,41 @@ const ResponsePage: React.FC = () => {
   }, []);
 
   const handleMoreClick = async () => {
-    await fetch('/api/more');
-    // Handle more logic
+    const requestData = {
+      originalComment: original,
+      suggestion_1: suggestion_1,
+      suggestion_2: suggestion_2,
+      suggestion_3: suggestion_3,
+    };
+    try {
+      const response = await sendMoreRequest(requestData);
+      console.log(response);
+
+      // Update sessionStorage with the new data
+      sessionStorage.setItem('translation_0', response.translation_0);
+      sessionStorage.setItem('suggestion_1', response.suggestion_1);
+      sessionStorage.setItem('translation_1', response.translation_1);
+      sessionStorage.setItem('suggestion_2', response.suggestion_2);
+      sessionStorage.setItem('translation_2', response.translation_2);
+      sessionStorage.setItem('suggestion_3', response.suggestion_3);
+      sessionStorage.setItem('translation_3', response.translation_3);
+
+      // Update state to reflect the new data
+      setTranslated(response.translation_0);
+      setSuggestion_1(response.suggestion_1);
+      setTranslation_1(response.translation_1);
+      setSuggestion_2(response.suggestion_2);
+      setTranslation_2(response.translation_2);
+      setSuggestion_3(response.suggestion_3);
+      setTranslation_3(response.translation_3);
+      setButtonLabels({
+        suggestion_1: response.suggestion_1,
+        suggestion_2: response.suggestion_2,
+        suggestion_3: response.suggestion_3,
+      });
+    } catch (error) {
+      console.error('Failed to send more request: ', error);
+    }
   };
 
   const handleBackClick = () => {

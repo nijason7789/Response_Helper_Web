@@ -28,3 +28,18 @@ export const sendCommentRequest = async (commentInput: string) => {
   return response;
 };
   
+export const sendMoreRequest = async (data: { originalComment: string; suggestion_1: string; suggestion_2: string; suggestion_3: string }) => {
+  const response = await fetch(`${config.apiDomain}/api/moreComments`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  });
+
+  if (!response.ok) {
+    throw new Error(`Failed to send more request: ${response.statusText}`);
+  }
+
+  return response.json();
+};
