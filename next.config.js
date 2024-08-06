@@ -8,7 +8,4 @@ const nextConfig = {
     assetPrefix: isProd ? `/${repoName}/` : '',
 };
 
-export default nextConfig;
-
-
-
+module.exports = nextConfig;

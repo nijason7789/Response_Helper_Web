@@ -10,7 +10,6 @@
     "lint": "next lint",
     "test": "jest"
   },
-  "type": "module",
   "dependencies": {
     "dotenv": "^16.4.5",
     "next": "14.2.5",
