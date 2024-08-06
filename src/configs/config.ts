@@ -1,7 +1,7 @@
 import { Iconfig } from '@/configs/types'
 
 const config: Iconfig = {
-    apiDomain: 'http://localhost:8888'
+    apiDomain: 'https://response-helper-service.onrender.com'
   };
   
 export default config;
