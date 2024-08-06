@@ -2,7 +2,7 @@ import React from 'react';
 import Button from '../components/Button/Button';
 import PageLayout from '../components/PageLayout/PageLayout';
 import { useRouter } from 'next/router';
-import { sendWakeUpRequest } from './service/apiService';
+import { sendWakeUpRequest } from '../services/apiService';
 
 const IndexPage: React.FC = () => {
   const router = useRouter();

@@ -4,7 +4,7 @@ import PageLayout from '../components/PageLayout/PageLayout';
 import ResponseCard from '../components/ResponseCard/ResponseCard';
 import ActionButtons from '@/components/ActionButtons/ActionButtons';
 import SuggestionButtons from '@/components/SuggestionButtons/SuggestionButtons'
-import { sendMoreRequest } from './service/apiService';
+import { sendMoreRequest } from '../services/apiService';
 
 const ResponsePage: React.FC = () => {
   const router = useRouter();
