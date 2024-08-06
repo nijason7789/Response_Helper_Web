@@ -54,8 +54,13 @@ const ResponsePage: React.FC = () => {
     router.push('/main');
   };
 
-  const handleSugestionButtonClick = ( translation: string) => {
-    console.log(`${translation} clicked`);
+  const handleSugestionButtonClick = async ( translation: string) => {
+    try {
+      await navigator.clipboard.writeText(translation);
+      console.log(`Copied to clipboard: ${translation}`);
+    } catch (error) {
+      console.error('Failed to copy text: ', error);
+    }
   }
 
   const handleMouseEnter = (suggestionKey:string, translation: string) => {

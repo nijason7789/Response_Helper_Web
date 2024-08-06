@@ -7,7 +7,6 @@ import { ApiResponse } from './service/type';
 
 const MainPage: React.FC = () => {
   const router = useRouter();
-  const [commentInput, setCommentInput] = useState('')
   const handleInputSubmit = async (commentInput: string) => {
     try{
       const suggestComment = await sendCommentRequest(commentInput);
