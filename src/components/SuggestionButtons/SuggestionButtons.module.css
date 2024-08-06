@@ -1,9 +1,10 @@
 .buttonContainer {
     display: flex;
-    justify-content: space-between;
-    width: 70%;
+    width: 100%;
     max-width: 100%;
     align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 
   .button {
@@ -16,7 +17,13 @@
     transition: background-color 0.3s ease;
     margin: 10px 0;
     width: 100%;
-    max-width: 400px;
+    max-width: 450px;
+    height: 80px; /* Add this to set a minimum height */
+    line-height: 1.2; /* Adjust line-height to control vertical alignment */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
   
   .button:hover {
