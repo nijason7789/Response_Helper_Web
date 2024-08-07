@@ -37,7 +37,7 @@ describe('ActionButtons', () => {
       <ActionButtons onMoreClick={onMoreClick} onBackClick={() => {}} />
     );
 
-    fireEvent.click(getByText('More'));
+    await fireEvent.click(getByText('More'));
     expect(sendMoreRequest).toHaveBeenCalledWith(mockedAPIRequest);
   });
 
