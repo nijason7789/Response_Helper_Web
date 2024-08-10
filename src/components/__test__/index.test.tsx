@@ -45,7 +45,6 @@ describe('IndexPage', () => {
   it('should handle API error gracefully', async () => {
     mockSendWakeUpRequest.mockRejectedValueOnce(new Error('API Error'));
     const { getByText } = render(<IndexPage />);
-
     fireEvent.click(getByText("YO, I'm ready"));
 
     await waitFor(() => {
