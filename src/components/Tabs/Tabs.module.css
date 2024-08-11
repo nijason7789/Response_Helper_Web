@@ -1,0 +1,32 @@
+/* Tabs.module.css */
+.tabContainer {
+    width: 70%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+    border-radius: 12px;
+    margin-top: 5%;
+    position: absolute; /* 固定在容器頂部 */
+    top: 0;
+}
+
+.tabItem {
+    flex: 1;
+    text-align: center;
+    border-radius: 12px;
+    padding: 15px 0;
+    cursor: pointer;
+    color: #fff;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.tabItem:hover {
+    background-color: #23073f;
+}
+
+.active {
+    background-color: #6a15c0;
+    color: #fff;
+    font-weight: bold;
+}

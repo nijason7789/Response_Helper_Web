@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import InputField from '../components/InputField/InputField';
-import PageLayout from '../components/PageLayout/PageLayout';
+import withTabs from '@/hoc/withTabs';
 import { useRouter } from 'next/router';
 import { sendCommentRequest } from '../services/apiService';
 import { ApiResponse } from '../services/type';
@@ -20,14 +20,14 @@ const MainPage: React.FC = () => {
   };
 
   return (
-    <PageLayout>
+    <div>
       <h1>Please paste comment here</h1>
       <InputField onSubmit={handleInputSubmit} />
-    </PageLayout>
+    </div>
   );
 };
 
-export default MainPage;
+export default withTabs(MainPage);
 
 function setSessionStorage (commentInput: string, data:ApiResponse) {
   sessionStorage.setItem('original', commentInput);

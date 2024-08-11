@@ -18,8 +18,8 @@
     margin: 10px 0;
     width: 100%;
     max-width: 450px;
-    height: 80px; /* Add this to set a minimum height */
-    line-height: 1.2; /* Adjust line-height to control vertical alignment */
+    height: 80px; 
+    line-height: 1.2; 
     display: flex;
     align-items: center;
     justify-content: center;
