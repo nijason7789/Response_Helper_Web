@@ -19,7 +19,11 @@ describe('InputField component', () => {
         expect(input.value).toBe('test');
     });
   
-    test('should call onSubmit with the input value when button is clicked', () => {
+    test.each`
+        action     | expected
+        ${'enter'} | ${true}
+        ${'click'} | ${true}
+        `(`should call onSubmit with the input value when enter or click event triggered `, (action) => {
         const handleSubmit = jest.fn(async () => {
             await sendCommentRequest(mockedCommentAPIRequest);
         });
@@ -28,17 +32,23 @@ describe('InputField component', () => {
         const button = getByRole('button', { name: "Send" });
     
         fireEvent.change(input, { target: { value: 'test' } });
-        fireEvent.click(button);
+        if (action ==='click'){
+            fireEvent.click(button);
+        }
+        else {
+            fireEvent.keyDown(input, { key: 'Enter', code: 'Enter' });
+        }
+
         expect(handleSubmit).toHaveBeenCalledWith(mockedCommentAPIRequest);
     });
   
-    // test('should not call onSubmit if input is empty when button is clicked', () => {
-    //     const handleSubmit = jest.fn();
-    //     const { getByRole } = render(<InputField onSubmit={handleSubmit} />);
-    //     const button = getByRole('button', { name: /send/i });
+    test('should not call onSubmit if input is empty when button is clicked', () => {
+        const handleSubmit = jest.fn();
+        const { getByRole } = render(<InputField onSubmit={handleSubmit} />);
+        const button = getByRole('button', { name: /send/i });
     
-    //     fireEvent.click(button);
+        fireEvent.click(button);
     
-    //     expect(handleSubmit).not.toHaveBeenCalled();
-    // });
+        expect(handleSubmit).not.toHaveBeenCalled();
+    });
   });

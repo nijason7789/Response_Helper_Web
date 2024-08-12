@@ -13,12 +13,27 @@ const InputField: React.FC<InputFieldProps> = ({ onSubmit }) => {
   };
 
   const handleSubmit = () => {
+    if (value.trim() === '') {
+      alert('Input cannot be empty');
+      return;
+    }
     onSubmit(value);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      handleSubmit();
+    }
   };
 
   return (
     <div className={styles.inputContainer}>
-      <input type="text" value={value} onChange={handleChange} className={styles.input} />
+      <input type="text" 
+        value={value} 
+        onChange={handleChange} 
+        onKeyDown={handleKeyDown} 
+        className={styles.input}
+      />
       <button onClick={handleSubmit} className={styles.button}>Send</button>
     </div>
   );
