@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import InputField from '../components/InputField/InputField';
+import InputField from '../../components/InputField/InputField';
 import withTabs from '@/hoc/withTabs';
 import { useRouter } from 'next/router';
-import { sendCommentRequest } from '../services/apiService';
-import { ApiResponse } from '../services/type';
+import { sendCommentRequest } from '../../services/apiService';
+import { ApiResponse } from '../../services/type';
 
 const MainPage: React.FC = () => {
   const router = useRouter();

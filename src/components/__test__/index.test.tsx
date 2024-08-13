@@ -38,7 +38,7 @@ describe('IndexPage', () => {
 
     await waitFor(() => {
       expect(mockSendWakeUpRequest).toHaveBeenCalled();
-      expect(mockPush).toHaveBeenCalledWith('/main');
+      expect(mockPush).toHaveBeenCalledWith('/generator/main');
     });
   });
 

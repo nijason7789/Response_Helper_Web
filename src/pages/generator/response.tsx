@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import { useRouter } from 'next/router';
-import PageLayout from '../components/PageLayout/PageLayout';
-import ResponseCard from '../components/ResponseCard/ResponseCard';
+import PageLayout from '../../components/PageLayout/PageLayout';
+import ResponseCard from '../../components/ResponseCard/ResponseCard';
 import ActionButtons from '@/components/ActionButtons/ActionButtons';
 import SuggestionButtons from '@/components/SuggestionButtons/SuggestionButtons'
-import { sendMoreRequest } from '../services/apiService';
+import { sendMoreRequest } from '../../services/apiService';
 
 const ResponsePage: React.FC = () => {
   const router = useRouter();

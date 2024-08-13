@@ -10,7 +10,7 @@ const IndexPage: React.FC = () => {
   const handleAwaken = async () => {
     try{
       await sendWakeUpRequest();
-      router.push('/main');
+      router.push('/generator/main');
     } catch (error){
       console.error(error);
     }
