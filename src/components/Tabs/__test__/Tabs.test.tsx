@@ -12,7 +12,7 @@ describe('Tabs component',() => {
 
     beforeEach(() => {
         (useRouter as jest.Mock).mockReturnValue({
-          pathname: '/main',
+          pathname: '/generator/main',
           push: mockPush,
         });
       });
@@ -41,7 +41,7 @@ describe('Tabs component',() => {
 
         fireEvent.click(screen.getByText('Generator'));
         expect(screen.getByText('Generator')).toHaveClass('active');
-        expect(mockPush).toHaveBeenCalledWith('/main');
+        expect(mockPush).toHaveBeenCalledWith('/generator/main');
       });
 
 })

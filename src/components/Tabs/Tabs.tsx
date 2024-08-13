@@ -7,7 +7,7 @@ const Tabs: React.FC = () => {
     const [activeTab, setActiveTab] = useState(router.pathname);
 
     const tabConfig = [
-        { path: '/main', label: 'Generator' },
+        { path: '/generator/main', label: 'Generator' },
         { path: '/page2', label: 'Editor' },
         { path: '/page3', label: 'Translator' },
       ];
