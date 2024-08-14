@@ -13,7 +13,7 @@ const MainPage: React.FC = () => {
       const data = await suggestComment.json();
       console.log(data);
       setSessionStorage(commentInput, data);
-      router.push('/response')
+      router.push('/generator/response')
     } catch(error) {
       console.error('Failed to send comment:', error);
     }

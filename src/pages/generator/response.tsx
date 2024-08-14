@@ -85,7 +85,7 @@ const ResponsePage: React.FC = () => {
   };
 
   const handleBackClick = () => {
-    router.push('/main');
+    router.push('/generator/main');
   };
 
   const handleSugestionButtonClick = async ( translation: string) => {
