@@ -33,7 +33,7 @@ describe('Tabs component',() => {
         render(<Tabs />);
         fireEvent.click(screen.getByText('Editor'));
         expect(screen.getByText('Editor')).toHaveClass('active');
-        expect(mockPush).toHaveBeenCalledWith('/page2');
+        expect(mockPush).toHaveBeenCalledWith('/editor/main');
 
         fireEvent.click(screen.getByText('Translator'));
         expect(screen.getByText('Translator')).toHaveClass('active');

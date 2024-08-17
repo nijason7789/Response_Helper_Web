@@ -6,4 +6,5 @@ export interface ApiResponse {
     suggestion_1: string,
     suggestion_2: string,
     suggestion_3: string,
+    [key: string]: string ;
   }
