@@ -8,7 +8,7 @@ const Tabs: React.FC = () => {
 
     const tabConfig = [
         { path: '/generator/main', label: 'Generator' },
-        { path: '/page2', label: 'Editor' },
+        { path: '/editor/main', label: 'Editor' },
         { path: '/page3', label: 'Translator' },
       ];
 

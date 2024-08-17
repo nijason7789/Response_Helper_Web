@@ -1,4 +1,5 @@
 import config from "@/configs/config";
+import { ApiResponse } from "./type";
 
 export const sendWakeUpRequest = async () => {
   const response = await fetch(`${config.apiDomain}/api/wakeup`, {
@@ -25,7 +26,7 @@ export const sendCommentRequest = async (commentInput: string) => {
     throw new Error(`Failed to wakeup: ${response.statusText}`);
   }
 
-  return response;
+  return await response.json() as ApiResponse;
 };
   
 export const sendMoreRequest = async (data: { originalComment: string; suggestion_1: string; suggestion_2: string; suggestion_3: string }) => {

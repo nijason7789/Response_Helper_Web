@@ -1,40 +1,33 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './InputField.module.css';
 
 interface InputFieldProps {
-  onSubmit: (value: string) => void;
+  onValueChange: (value: string) => void;
+  value: string;
+  onEnterPress: () => void;
 }
 
-const InputField: React.FC<InputFieldProps> = ({ onSubmit }) => {
-  const [value, setValue] = useState('');
-
+const InputField: React.FC<InputFieldProps> = ({ onValueChange, value, onEnterPress }) => {
+  
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(e.target.value);
-  };
-
-  const handleSubmit = () => {
-    if (value.trim() === '') {
-      alert('Input cannot be empty');
-      return;
-    }
-    onSubmit(value);
+    onValueChange(e.target.value); 
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
-      handleSubmit();
+      onEnterPress();
     }
   };
 
   return (
     <div className={styles.inputContainer}>
-      <input type="text" 
-        value={value} 
-        onChange={handleChange} 
-        onKeyDown={handleKeyDown} 
+      <input
+        type="text"
+        value={value}
+        onChange={handleChange}
+        onKeyDown={handleKeyDown}
         className={styles.input}
       />
-      <button onClick={handleSubmit} className={styles.button}>Send</button>
     </div>
   );
 };
