@@ -55,7 +55,7 @@ export const sendAudit = async (data: { fromLanguage: string; nativeComment: str
   });
 
   if (!response.ok) {
-    throw new Error(`Failed to send more request: ${response.statusText}`);
+    throw new Error(`Failed to send Audit request: ${response.statusText}`);
   }
 
   return response.json();
