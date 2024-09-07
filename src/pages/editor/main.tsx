@@ -32,14 +32,14 @@ const MainPage: React.FC = () => {
 
   return (
     <div>
-      <h3> Your native languange and reply comment</h3>
+      <h3> Your native Language and reply comment</h3>
       <LanguageAuditor
         selectedLanguage={fromLanguage}
         inputValue={fromComment}
         onLanguageChange={setfromLanguage}
         onInputChange={setfromComment}
       />
-      <h3> Your final languange and reply comment</h3>
+      <h3> Your final Language and reply comment</h3>
       <LanguageAuditor
         selectedLanguage={toLanguage}
         inputValue={toComment}
