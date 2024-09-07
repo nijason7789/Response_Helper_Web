@@ -44,3 +44,19 @@ export const sendMoreRequest = async (data: { originalComment: string; suggestio
 
   return response.json();
 };
+
+export const sendAudit = async (data: { fromLanguage: string; nativeComment: string; toLanguage: string; translatedComment: string }) => {
+  const response = await fetch(`${config.apiDomain}/api/advice`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  });
+
+  if (!response.ok) {
+    throw new Error(`Failed to send more request: ${response.statusText}`);
+  }
+
+  return response.json();
+};

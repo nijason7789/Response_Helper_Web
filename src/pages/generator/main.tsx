@@ -32,12 +32,14 @@ const MainPage: React.FC = () => {
   return (
     <div>
       <h1>Please paste comment here</h1>
-      <InputField 
-        value={commentInput} 
-        onValueChange={handleInputChange} 
-        onEnterPress={handleInputSubmit} // 使用 Enter 鍵觸發送出
-      />
-      <Button onClick= {handleInputSubmit} label="Send" />
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <InputField 
+          value={commentInput} 
+          onValueChange={handleInputChange} 
+          onEnterPress={handleInputSubmit}
+        />
+        <Button onClick= {handleInputSubmit} label="Send" />
+      </div>
     </div>
   );
 };

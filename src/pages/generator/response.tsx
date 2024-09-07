@@ -133,7 +133,7 @@ const ResponsePage: React.FC = () => {
         onMouseLeave={() => handleMouseLeave('suggestion_3',suggestion_3)}
         label = {buttonLabels.suggestion_3}
         />
-      <ActionButtons onBackClick={() => handleBackClick()} onMoreClick={() => handleMoreClick()}/>
+      <ActionButtons onBackClick={() => handleBackClick()} onMoreClick={() => handleMoreClick()} label1 = 'More' label2 = 'Back' />
     </PageLayout>
   );
 };
