@@ -26,11 +26,11 @@ const MainPage: React.FC = () => {
     }
     try{
       const auditedComment = await sendAudit(payload);
-      console.log(auditedComment);
       await setSessionStorage(auditedComment)
       router.push('/editor/response')
     } catch(error) {
-      console.error('Failed to send comment:', error);
+      alert('Failed to send comment, please try again');
+      return;
     }
   };
 

@@ -1,0 +1,14 @@
+{
+    "original": "mocked original comment",
+    "translations": {
+        "0": "mocked translation 0",
+        "1": "mocked translation 1",
+        "2": "mocked translation 2",
+        "3": "mocked translation 3"
+    },
+    "suggestions": {
+        "1": "mocked suggestion 1",
+        "2": "mocked suggestion 2",
+        "3": "mocked suggestion 3"
+    }
+}

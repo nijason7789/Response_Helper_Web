@@ -21,11 +21,11 @@ const MainPage: React.FC = () => {
     }
     try{
       const suggestComment = await sendCommentRequest(commentInput);
-      console.log(suggestComment);
       setSessionStorage(commentInput, suggestComment);
       router.push('/generator/response')
     } catch(error) {
-      console.error('Failed to send comment:', error);
+      alert('Something went wrong, please try again later');
+      return;
     }
   };
 

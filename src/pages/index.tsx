@@ -12,7 +12,8 @@ const IndexPage: React.FC = () => {
       await sendWakeUpRequest();
       router.push('/generator/main');
     } catch (error){
-      console.error(error);
+      alert('Something went wrong, please try again later');
+      return;
     }
   };
 
