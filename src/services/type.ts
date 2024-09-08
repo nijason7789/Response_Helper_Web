@@ -8,3 +8,9 @@ export interface ApiResponse {
     suggestion_3: string,
     [key: string]: string ;
   }
+
+
+export interface AuditResponse {
+    suggestion: string,
+    translation: string
+}

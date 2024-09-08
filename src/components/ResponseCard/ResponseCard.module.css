@@ -8,13 +8,13 @@
 }
 
 .title {
-  margin: 0;
+  margin-bottom: 10px;
   font-size: 1.2rem;
-  color: #ccc;
+  color: #ffffff;
 }
 
 .text {
   margin: 0;
   font-size: 1rem;
-  color: #aaa;
+  color: #ffffff;
 }

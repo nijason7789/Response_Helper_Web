@@ -22,7 +22,7 @@ const mockedAPIRequest = {
 describe('ActionButtons', () => {
   it('More and Back buttons were rendered correctly', () => {
     const { getByText } = render(
-      <ActionButtons onMoreClick={() => {}} onBackClick={() => {}} />
+      <ActionButtons onMoreClick={() => {}} onBackClick={() => {}} label1 = 'More' label2 = 'Back' />
     );
 
     expect(getByText('More')).toBeInTheDocument();
@@ -34,7 +34,7 @@ describe('ActionButtons', () => {
       await sendMoreRequest(mockedAPIRequest);
     });
     const { getByText } = render(
-      <ActionButtons onMoreClick={onMoreClick} onBackClick={() => {}} />
+      <ActionButtons onMoreClick={onMoreClick} onBackClick={() => {}} label1 = 'More' label2 = 'Back' />
     );
 
     await fireEvent.click(getByText('More'));
@@ -49,7 +49,7 @@ describe('ActionButtons', () => {
     };
 
     const { getByText } = render(
-      <ActionButtons onMoreClick={() => {}} onBackClick={onBackClick} />
+      <ActionButtons onMoreClick={() => {}} onBackClick={onBackClick} label1 = 'More' label2 = 'Back' />
     );
 
     fireEvent.click(getByText('Back'));
