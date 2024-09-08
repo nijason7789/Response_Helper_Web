@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
 import { useRouter } from 'next/router';
 import PageLayout from '../../components/PageLayout/PageLayout';
 import ResponseCard from '@/components/ResponseCard/ResponseCard';
@@ -9,7 +10,6 @@ const ResponsePage: React.FC = () => {
   const router = useRouter();
   const [suggestion, setSuggestion] = useState<string>('');
   const [translation, setTranslation] = useState<string>('');
-  // const [textToCopy, setTextToCopy] = useState('這是第二個容器中的文字');
 
   useEffect(() => {
     const storedSuggestion = sessionStorage.getItem('suggestion') || '無建議';
@@ -25,9 +25,10 @@ const ResponsePage: React.FC = () => {
   const handleCopyClick = async () => {
     try {
       await navigator.clipboard.writeText(translation);
-      console.log('已複製到剪貼簿:', translation);
+      alert(`${translation} \nis copied to clipboard`);
     } catch (error) {
-      console.error('複製失敗:', error);
+      alert('Copy failed, please try again later');
+      return;
     }
   };
 

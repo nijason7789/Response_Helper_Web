@@ -30,7 +30,8 @@ const MainPage: React.FC = () => {
       await setSessionStorage(auditedComment)
       router.push('/editor/response')
     } catch(error) {
-      console.error('Failed to send comment:', error);
+      alert('Failed to send comment, please try again');
+      return;
     }
   };
 

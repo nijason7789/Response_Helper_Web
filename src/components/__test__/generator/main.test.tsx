@@ -18,6 +18,7 @@ describe('Generator Main page', () => {
     let btn: HTMLElement;
     let input: HTMLInputElement;
     beforeEach(() => {
+        window.alert = jest.fn();
         jest.clearAllMocks();
         (useRouter as jest.Mock).mockReturnValue({
           push: mockPush,
@@ -45,6 +46,17 @@ describe('Generator Main page', () => {
     it('should not send API request when input field is empty', async() =>{
         fireEvent.click(btn);
         expect(mockSendCommentRequest).not.toHaveBeenCalled();
+        expect(window.alert).toHaveBeenCalledWith('Input cannot be empty');
     })
+
+    it('should handle API error gracefully', async () => {
+        mockSendCommentRequest.mockRejectedValueOnce(new Error('API Error'));
+        fireEvent.change(input, { target: { value: 'test' } });
+        fireEvent.click(btn);
+        await waitFor(() => {
+            expect(mockSendCommentRequest).toHaveBeenCalledWith('test');
+            expect(window.alert).toHaveBeenCalledWith('Something went wrong, please try again later');
+        });
+    });
 
 })

@@ -18,6 +18,7 @@ describe('IndexPage', () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
+    window.alert = jest.fn();
 
     (useRouter as jest.Mock).mockReturnValue({
       push: mockPush,
@@ -50,6 +51,7 @@ describe('IndexPage', () => {
     await waitFor(() => {
       expect(mockSendWakeUpRequest).toHaveBeenCalled();
       expect(mockPush).not.toHaveBeenCalled();
+      expect(window.alert).toHaveBeenCalledWith('Something went wrong, please try again later');
     });
   });
 });

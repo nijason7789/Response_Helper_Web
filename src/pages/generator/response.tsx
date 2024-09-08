@@ -55,7 +55,6 @@ const ResponsePage: React.FC = () => {
     };
     try {
       const response = await sendMoreRequest(requestData);
-      console.log(response);
 
       // Update sessionStorage with the new data
       sessionStorage.setItem('translation_0', response.translation_0);
@@ -80,7 +79,8 @@ const ResponsePage: React.FC = () => {
         suggestion_3: response.suggestion_3,
       });
     } catch (error) {
-      console.error('Failed to send more request: ', error);
+      alert('Something went wrong, please try again later');
+      return;
     }
   };
 
@@ -91,9 +91,10 @@ const ResponsePage: React.FC = () => {
   const handleSugestionButtonClick = async ( translation: string) => {
     try {
       await navigator.clipboard.writeText(translation);
-      console.log(`Copied to clipboard: ${translation}`);
+      alert(`${translation}\nis copied to clipboard`);
     } catch (error) {
-      console.error('Failed to copy text: ', error);
+      alert('Failed to copy text, please try again later');
+      return;
     }
   }
 
