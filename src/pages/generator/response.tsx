@@ -88,7 +88,7 @@ const ResponsePage: React.FC = () => {
     router.push('/generator/main');
   };
 
-  const handleSugestionButtonClick = async ( translation: string) => {
+  const handleSuggestionButtonClick = async ( translation: string) => {
     try {
       await navigator.clipboard.writeText(translation);
       alert(`${translation}\nis copied to clipboard`);
