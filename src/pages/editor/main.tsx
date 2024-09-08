@@ -26,7 +26,6 @@ const MainPage: React.FC = () => {
     }
     try{
       const auditedComment = await sendAudit(payload);
-      console.log(auditedComment);
       await setSessionStorage(auditedComment)
       router.push('/editor/response')
     } catch(error) {

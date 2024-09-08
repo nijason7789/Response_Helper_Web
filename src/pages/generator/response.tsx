@@ -117,19 +117,19 @@ const ResponsePage: React.FC = () => {
     <PageLayout>
       <ResponseCard title={original as string} text={translated as string} />
       <SuggestionButtons 
-        onSuggestionClick = {() => handleSugestionButtonClick(suggestion_1)}
+        onSuggestionClick = {() => handleSuggestionButtonClick(suggestion_1)}
         onMouseEnter={() => handleMouseEnter('suggestion_1',translation_1)}
         onMouseLeave={() => handleMouseLeave('suggestion_1',suggestion_1)}
         label = {buttonLabels.suggestion_1}
       />
       <SuggestionButtons 
-        onSuggestionClick = {() => handleSugestionButtonClick(suggestion_2)}
+        onSuggestionClick = {() => handleSuggestionButtonClick(suggestion_2)}
         onMouseEnter={() => handleMouseEnter('suggestion_2',translation_2)}
         onMouseLeave={() => handleMouseLeave('suggestion_2',suggestion_2)}
         label = {buttonLabels.suggestion_2}
         />
       <SuggestionButtons
-        onSuggestionClick = {() => handleSugestionButtonClick(suggestion_3)}
+        onSuggestionClick = {() => handleSuggestionButtonClick(suggestion_3)}
         onMouseEnter={() => handleMouseEnter('suggestion_3',translation_3)}
         onMouseLeave={() => handleMouseLeave('suggestion_3',suggestion_3)}
         label = {buttonLabels.suggestion_3}
