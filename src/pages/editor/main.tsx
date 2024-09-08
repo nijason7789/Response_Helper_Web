@@ -14,6 +14,10 @@ const MainPage: React.FC = () => {
 
   const router = useRouter();
   const handleSubmit = async () => {
+    if (fromComment.trim() === '' || toComment.trim() === '') {
+      alert('Input cannot be empty');
+      return;
+    }
     const payload = {
       fromLanguage: fromLanguage,
       nativeComment: fromComment,
